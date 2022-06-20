@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  padding: 30px;
+  background: url("../public/background.jpg") no-repeat center/cover;
+}
+
+.logo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .app__logo {
   width: 200px;
@@ -7,13 +20,14 @@
 .app__form {
   position: fixed;
   bottom: 20px;
-  background-color: lightgray;
+  background-color: whitesmoke;
   width: 90%;
   padding: 20px;
   z-index: 1;
-  border-radius: 5px;
+  border-radius: 15px;
   left: 50%;
   transform: translateX(-50%);
+  border: 2px solid brown;
 }
 .app__formControl {
   display: flex !important;
@@ -22,6 +36,20 @@
 .app__input {
   flex: 1;
 }
+
 .app__iconButton {
   flex: 0;
+}
+
+.app__sendIcon {
+  color: red;
+}
+.app__sendIcon:hover {
+  cursor: pointer;
+}
+
+::placeholder {
+  /* color: brown !important; */
+  font-weight: 500;
+  font-size: 20px;
 }

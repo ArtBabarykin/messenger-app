@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  Input,
-  IconButton,
-} from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
 import Message from "./Message";
 import firebase from "firebase/compat/app";
 import db from "./firebase";
 import FlipMove from "react-flip-move";
+import SendIcon from "@mui/icons-material/Send";
+import { FormControl, Input, IconButton } from "@mui/material";
 import "./App.css";
 
 function App() {
@@ -43,16 +37,10 @@ function App() {
   };
   return (
     <div className="App">
-      <img
-        className="app__logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg"
-        alt="logo"
-      />
-      <h1>Let's start all over {username}!</h1>
       <form className="app__form">
         <FormControl className="app__formControl">
           <Input
-            placeholder="Enter a message..."
+            placeholder={`Hey ${username}! Start typing your message here...`}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className="app__input"
@@ -65,7 +53,7 @@ function App() {
             disabled={!input}
             className="app__iconButton"
           >
-            <SendIcon />
+            <SendIcon className="app__sendIcon" />
           </IconButton>
         </FormControl>
       </form>
